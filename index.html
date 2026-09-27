@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>比赛投票墙</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="vote-wall">
+
+    <!-- 标题行 -->
+    <div class="header">
+      <h1>
+        <span>🗳️</span> 比赛投票墙
+      </h1>
+      <button class="total-votes-badge" id="topVotesBadge" title="点击查看最高票作品">
+        <i>🏆</i> 最高票数 <span id="topVotesCount">0</span>
+      </button>
+    </div>
+
+    <!-- 上传作品区域 -->
+    <div class="upload-section">
+      <div class="upload-label">📤 上传你的参赛作品</div>
+
+      <!-- 【修改】新增姓名字段，现在有三个输入框 -->
+      <div class="form-row">
+        <input type="text" id="nameInput" class="text-input" placeholder="👤 请输入姓名" maxlength="20" />
+        <input type="text" id="schoolInput" class="text-input" placeholder="🏫 请输入学校名称" maxlength="30" />
+        <input type="text" id="studentIdInput" class="text-input" placeholder="🆔 请输入学号" maxlength="20" />
+      </div>
+
+      <label class="upload-btn">
+        <span>📁</span> 选择图片上传
+        <input type="file" id="fileInput" accept="image/*" />
+      </label>
+
+      <!-- 上传前预览 -->
+      <div class="preview-area" id="previewArea">
+        <img id="previewImage" class="preview-image" src="" alt="作品预览" />
+        <br />
+        <button class="publish-btn" id="publishBtn">🚀 发布作品</button>
+        <button class="remove-btn" id="removeBtn">✕ 取消</button>
+      </div>
+    </div>
+
+    <!-- 作品展示网格 -->
+    <div class="works-grid" id="worksGrid">
+      <div class="empty-tip" id="emptyTip">
+        🎨 还没有作品，快来上传第一个吧！
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 最高票作品弹窗 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalCloseBtn">✕</button>
+      <div class="modal-title">🏆 当前最高票作品</div>
+
+      <div class="modal-content" id="modalContent">
+        <!-- JS 动态填充 -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
